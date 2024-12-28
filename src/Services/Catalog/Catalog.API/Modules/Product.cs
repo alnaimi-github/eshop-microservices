@@ -4,12 +4,12 @@ public class Product
 {
    
 
-    public Guid Id { get;private set; }
-    public string Name { get; private set; }
-    public List<string> Category { get; private set; }
-    public string Description { get; private set; }
-    public string ImageFile { get; private set; }
-    public decimal Price { get; private set; }
+    public Guid Id { get;set; }
+    public string Name { get; set; }
+    public List<string> Category { get; set; }
+    public string Description { get; set; }
+    public string ImageFile { get;  set; }
+    public decimal Price { get;  set; }
 
    
         public static Product  Create(ProductDto productDto)
