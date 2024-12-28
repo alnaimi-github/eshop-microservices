@@ -1,7 +1,5 @@
 ﻿namespace Catalog.API.Products.CreateProduct;
 
-public sealed record CreateProductRequest(ProductDto ProductDto);
-public sealed record CreateProductResponse(Guid Id);
 public class CreateProductEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
