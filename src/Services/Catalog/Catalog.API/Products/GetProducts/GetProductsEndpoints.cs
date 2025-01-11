@@ -1,8 +1,5 @@
-﻿using Catalog.API.Products.CreateProduct;
+﻿namespace Catalog.API.Products.GetProducts;
 
-namespace Catalog.API.Products.GetProducts;
-
-public sealed record GetProductsResponse(IEnumerable<Product> Products);
 public class GetProductsEndpoints : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)

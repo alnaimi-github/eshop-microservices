@@ -1,10 +1,5 @@
-﻿using Marten.Linq.QueryHandlers;
+﻿namespace Catalog.API.Products.GetProducts;
 
-namespace Catalog.API.Products.GetProducts;
-
-public sealed record GetProductsQuery() : IQuery<GetProductsResult>;
-
-public sealed record GetProductsResult(IEnumerable<Product> Products);
 public class GetProductsHandler (
     IDocumentSession documentSession,
     ILogger<GetProductsQuery> logger)
