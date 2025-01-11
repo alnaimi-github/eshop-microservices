@@ -1,18 +1,14 @@
 ﻿namespace Catalog.API.Products.GetProducts;
 
-public class GetProductsHandler (
-    IDocumentSession documentSession,
-    ILogger<GetProductsQuery> logger)
+public class GetProductsHandler (IDocumentSession documentSession)
     : IQueryHandler<GetProductsQuery,GetProductsResult>
 {
     public async Task<GetProductsResult> Handle(
         GetProductsQuery query,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("GetProductsQueryHandler.Handle called with {@Query}", query);
-
         var products = await documentSession.Query<Product>()
-                                           .ToListAsync(cancellationToken);
+            .ToPagedListAsync(query.PageNumber ?? 1, query.PageSize ?? 10, cancellationToken);
 
         return new GetProductsResult(products);
     }
