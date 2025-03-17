@@ -18,3 +18,5 @@ app.UseMigration();
 app.MapGrpcService<DiscountService>();
 
 app.Run();
+
+
