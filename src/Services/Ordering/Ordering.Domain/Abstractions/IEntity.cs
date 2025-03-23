@@ -1,13 +1,13 @@
 ﻿namespace Ordering.Domain.Abstractions;
 
-public interface IEntity<T> : IEntity
-{
-    public T Id { get; set; }
+public interface IEntity<out T> : IEntity
+{ 
+    T Id { get; }
 }
 public interface IEntity
 {
-    public DateTime? CreatedAt { get; set; }
-    public string? CreatedBy { get; set; }
-    public DateTime? LastModified { get; set; }
-    public string? LastModifiedBy { get; set; }
+    DateTime? CreatedAt { get; }
+    string? CreatedBy { get; }
+    DateTime? LastModified { get; } 
+    string? LastModifiedBy { get; }
 }
