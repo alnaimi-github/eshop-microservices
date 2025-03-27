@@ -26,6 +26,17 @@ services:
     volumes:
       - postgres_basket:/var/lib/postgresql/data
 #================================================================#  
+  orderdb:
+    container_name: orderdb
+    hostname: mssql-db
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Passw0rd'
+      MSSQL_PID: 'Developer' 
+      MSSQL_TCP_PORT: 1433 
+    ports: 
+      - "1434:1433"
+#================================================================#  
   distributedcache:
    container_name: distributedcache
    restart: always

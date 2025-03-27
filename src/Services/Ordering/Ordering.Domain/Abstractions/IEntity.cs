@@ -6,8 +6,8 @@ public interface IEntity<out T> : IEntity
 }
 public interface IEntity
 {
-    DateTime? CreatedAt { get; }
-    string? CreatedBy { get; }
-    DateTime? LastModified { get; } 
-    string? LastModifiedBy { get; }
+    DateTime? CreatedAt { get; set; }
+    string? CreatedBy { get; set; }
+    DateTime? LastModified { get; set; } 
+    string? LastModifiedBy { get; set; }
 }
