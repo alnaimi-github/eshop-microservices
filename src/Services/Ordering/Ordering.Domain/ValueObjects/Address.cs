@@ -49,7 +49,7 @@ public sealed record Address
             zipCod);
     }
 
-    protected Address()
+    public Address()
     {
 
     }
