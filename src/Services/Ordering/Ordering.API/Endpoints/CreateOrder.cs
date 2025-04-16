@@ -16,7 +16,7 @@ public sealed class CreateOrder : ICarterModule
 
             var response = result.Adapt<CreateOrderResponse>();
 
-            return Results.CreatedAtRoute("/orders/", new { id = response.Id }, response);
+            return Results.Ok(response);
         })
         .WithName("CreateOrder")
         .Produces<CreateOrderResponse>(StatusCodes.Status201Created)
