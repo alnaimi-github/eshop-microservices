@@ -14,3 +14,4 @@ global using Marten;
 global using MediatR;
 global using System.Text.Json;
 global using Microsoft.Extensions.Caching.Distributed;
+global using Basket.API.Dtos;
